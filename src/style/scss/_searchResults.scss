@@ -4,9 +4,18 @@
     border: solid 1px $light-grey;
     @include BoxShadowHelper(1);
     color: $dark-grey;
+    height: 100%;
     margin-top: 5px;
     max-height: 70%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.iapp-search-results-inner-wrap {
+    height: 100%;
     overflow-y: auto;
+    position: absolute;
     width: 100%;
 }
 

@@ -18,9 +18,9 @@ define([
             _.each(models, function(entryModel) {
                 var entryView = new EntryView({model: entryModel});
                 _this.subViews.push(entryView);
-                _this.$el.append(entryView.el);
+                _this.$('.iapp-search-results-inner-wrap').append(entryView.el);
             });
-            this.show();
+            // this.show();
             return this;
         },
         hide: function() {

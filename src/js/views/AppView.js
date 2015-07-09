@@ -17,12 +17,13 @@ define([
             this.listenTo(Backbone, "router:search", this.skipVideo);
             this.listenTo(Backbone, "router:detail", this.onDetailRoute);
             this.listenTo(Backbone, "router:info", this.onInfoRoute);
-            console.log(this.collection);
             this.render();
         },
         render: function() {
             this.$el.html(this.template({isMobile: config.isMobile || config.isTablet}));
             var videoView = new VideoView();
+
+            var usModel = this.collection.findWhere({'full_state': 'US Total'});
 
             if (config.isMobile || config.isTablet) {
                 this.$('.iapp-mobile-video-container').html(videoView.render().el);
@@ -30,6 +31,7 @@ define([
                 this.$el.append(videoView.render().el);
             }
             this.resultsView = new ResultsView({el: this.$(".iapp-search-results-wrap")});
+            Backbone.trigger("detail:show", usModel);
             Backbone.history.start();
             return this;
         },
@@ -49,10 +51,11 @@ define([
                 console.log(filterTerm);
                 return entryModel.get("slug").indexOf(filterTerm) > -1;
             });
-            console.log(filteredArray);
             return filteredArray;
         }, 200),
         onSearchChange: function(e) {
+            console.log("onsearch change");
+            this.resultsView.show();
             var _this = this;
             var filterTerm = this.$('.iapp-search-input').val();
             var filteredItems = this.filterItems(filterTerm);
@@ -81,7 +84,6 @@ define([
             console.log("detail:");
             console.log(entryModel);
             this.$('.iapp-search-input').val('');
-            this.onSearchChange();
             this.detailView = new DetailView({model: entryModel});
             this.$('.iapp-detail-container').html(this.detailView.el);
         },

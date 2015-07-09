@@ -56,7 +56,7 @@ define(
         },
         skipVideo: function() {
             this.$('.video-wrap').hide();
-            Backbone.trigger('video:end');
+            // Backbone.trigger('video:end');
             this.video.pause();
         },
         addVideoListeners: function() {

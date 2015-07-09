@@ -17,8 +17,6 @@ define([
         },
         template: templates["DetailView.html"],
         events: {
-            "click .iapp-detail-close-button": "onCloseClick",
-            "click .iapp-detail-background": "onCloseClick",
             "click .iapp-detail-share-button": "onShareClick",
             "click .iapp-share-icon": "onShareButtonClick"
         },
