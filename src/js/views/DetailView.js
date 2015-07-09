@@ -9,7 +9,7 @@ define([
 ], function(jQuery, _, Backbone, config, router, templates, Analytics) {
     return Backbone.View.extend({
         initialize: function() {
-            router.navigate('search/' + this.model.get('slug'));
+            router.navigate('state/' + this.model.get('slug'));
             this.render();
         },
         render: function() {

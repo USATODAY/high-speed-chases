@@ -17,6 +17,7 @@ define([
             this.listenTo(Backbone, "router:search", this.skipVideo);
             this.listenTo(Backbone, "router:detail", this.onDetailRoute);
             this.listenTo(Backbone, "router:info", this.onInfoRoute);
+            console.log(this.collection);
             this.render();
         },
         render: function() {
@@ -37,14 +38,18 @@ define([
             "click .iapp-info-button": "showInfo",
             "click .iapp-play-button": "showVideo",
             "click .iapp-info-close": "closeInfo",
-            "click .js-iapp-info-background": "closeInfo"
+            "click .js-iapp-info-background": "closeInfo",
+            "focus .iapp-search-input": "onSearchChange",
+            "blur .iapp-search-input": "hideResults"
         },
         template: templates["AppView.html"],
         filterItems: _.throttle(function(filterTerm) {
             filterTerm = helpers.slugify(filterTerm);
             var filteredArray = this.collection.filter(function(entryModel) {
+                console.log(filterTerm);
                 return entryModel.get("slug").indexOf(filterTerm) > -1;
             });
+            console.log(filteredArray);
             return filteredArray;
         }, 200),
         onSearchChange: function(e) {
@@ -54,8 +59,15 @@ define([
             if (filterTerm !== "") {
                 this.resultsView.render(filteredItems);
             } else {
-                this.resultsView.hide();
+                this.resultsView.render(this.collection.models);
             }
+        },
+        hideResults: function() {
+            var _this = this;
+
+            // a little ugly. wait to hide results view for 100ms to allow for click on detail
+            // bind to results view to avoid generic window this in method
+            _.delay(_this.resultsView.hide.bind(_this.resultsView), 200);
         },
         skipVideo: function() {
             this.$('.iapp-search').removeClass('iapp-fade');
@@ -66,10 +78,12 @@ define([
             this.onDetailShow(entryModel);
         },
         onDetailShow: function(entryModel) {
+            console.log("detail:");
+            console.log(entryModel);
             this.$('.iapp-search-input').val('');
             this.onSearchChange();
             this.detailView = new DetailView({model: entryModel});
-            this.$el.append(this.detailView.el);
+            this.$('.iapp-detail-container').html(this.detailView.el);
         },
         onVideoEnd: function() {
             this.$('.iapp-search').removeClass('iapp-fade');

@@ -7,9 +7,9 @@ define([
 ], function(jQuery, _, Backbone, helpers, config) {
     return Backbone.Model.extend({
         initialize: function() {
+            console.log(this.get('full_state'));
             this.set({
-                "Total_untested_kits_pretty": this.get("Total_untested_kits").toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
-                "slug": helpers.slugify(this.get('Agency'))
+                "slug": helpers.slugify(this.get('full_state'))
             });
             this.setShare();
         },
@@ -26,15 +26,15 @@ define([
             });
         },
         createFbShareURL: function() {
-            var slug = this.get('slug');
+            var slug = this.get('state');
             var baseURL = window.location.origin + window.location.pathname;
-            return encodeURI(baseURL + "%23search/" + slug); 
+            return encodeURI(baseURL + "%23state/" + slug); 
         },
 
         createTwitterShareURL: function() {
-            var slug = this.get('slug');
+            var slug = this.get('state');
             var baseURL = window.location.origin + window.location.pathname;
-            return encodeURIComponent(baseURL + "#search/" + slug); 
+            return encodeURIComponent(baseURL + "#state/" + slug); 
         },
 
         createEmailLink: function(videoID) {
