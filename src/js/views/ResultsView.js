@@ -18,11 +18,16 @@ define([
             _.each(models, function(entryModel) {
                 var entryView = new EntryView({model: entryModel});
                 _this.subViews.push(entryView);
-                _this.$('.iapp-search-results-inner-wrap').append(entryView.el);
+                _this.$el.append(entryView.el);
             });
-            // this.show();
+            this.$('.no-results-entry').remove();
+            if (models.length === 0) {
+                this.$el.append(this.noResultsEntry);
+            }
+            this.show();
             return this;
         },
+        noResultsEntry: "<div class='no-results-entry'><h2 class='iapp-search-entry-title'>No results</h2></div>",
         hide: function() {
             this.$el.hide();
         },

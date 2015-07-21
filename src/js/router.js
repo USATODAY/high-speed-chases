@@ -9,7 +9,7 @@ define([
             routes: {
                 "": "home",
                 "search/": "search",
-                "state/:slug": "detail",
+                "search/:slug": "detail",
                 "info/": "info"
             },
 

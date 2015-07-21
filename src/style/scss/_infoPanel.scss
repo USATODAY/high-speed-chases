@@ -1,7 +1,8 @@
 .iapp-info-wrap {
-    bottom: 0;
     display: none;
     left: 0;
+    height: 100%;
+    overflow-y: auto;
     position: absolute;
     right: 0;
     top: 0;
@@ -34,7 +35,7 @@
     top: 10px;
     transition: opacity 250ms ease;
     width: 30px;
-    z-index: 100;
+    z-index: 105;
     &:hover {
         opacity: 1;
     }

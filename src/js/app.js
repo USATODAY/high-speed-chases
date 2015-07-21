@@ -17,7 +17,7 @@ define(
             var dataManager = new DataManager(config.dataURL);
             var $pageWrap = jQuery('.iapp-page-wrap');
             updateHeight();
-            dataManager.getData(function(data) { 
+            dataManager.getData(function(data) {
                 var entriesCollection = new EntriesCollection(data);
                 var appView = new AppView({collection: entriesCollection});
                 $pageWrap.append(appView.el);
@@ -33,11 +33,15 @@ define(
             function updateHeight(e) {
                 var newHeight;
                 if (!config.isMobile) {
-                    newHeight = window.innerHeight - 40;
+                    // newHeight = window.innerHeight - 40;
+                    // $pageWrap.height(newHeight);
                 } else {
-                    newHeight = window.innerHeight - 50;
+                    // newHeight = window.innerHeight + 100;
                 }
-                $pageWrap.height(newHeight);
+            }
+
+            if (config.isIframe) {
+                $pageWrap.addClass('iapp-embed');
             }
         }
 

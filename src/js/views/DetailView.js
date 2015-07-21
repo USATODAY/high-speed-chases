@@ -2,14 +2,15 @@ define([
    "jquery",
    "underscore",
    "backbone",
+   "d3",
    "config",
    "router", 
    "templates",
    "api/analytics"
-], function(jQuery, _, Backbone, config, router, templates, Analytics) {
+], function(jQuery, _, Backbone, d3, config, router, templates, Analytics) {
     return Backbone.View.extend({
         initialize: function() {
-            router.navigate('state/' + this.model.get('slug'));
+            router.navigate('search/' + this.model.get('slug'));
             this.render();
         },
         render: function() {
@@ -17,6 +18,8 @@ define([
         },
         template: templates["DetailView.html"],
         events: {
+            "click .iapp-detail-close-button": "onCloseClick",
+            "click .iapp-detail-background": "onCloseClick",
             "click .iapp-detail-share-button": "onShareClick",
             "click .iapp-share-icon": "onShareButtonClick"
         },
@@ -45,6 +48,26 @@ define([
                 "",
                 "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + width + ",height=" + height + ",top=" + top + ",left=" + left
             );
+        },
+        drawChart: function() {
+            var width = this.$(".iapp-detail-inner-wrap").outerWidth();
+            var height = 30;
+            var $el = $('.iapp-detail-chart');
+            var $el2 = this.$('.iapp-detail-chart');
+            var modelJSON = this.model.toJSON();
+            var colors = ["blue", "red", "green"];
+            var data = [modelJSON.police, modelJSON.fleeing_driver, modelJSON.bystanders + modelJSON.fleeing_other];
+            var svg = d3.select('.iapp-detail-chart').append("svg")
+                .attr("width", width)
+                .attr("height", height);
+            svg.selectAll('rect')
+                .data(data)
+                .enter()
+                .append('rect')
+                .attr("width", 30)
+                .attr("height", height)
+                .attr("transform", function(d, i) { return "translate(" + i * 30 + ", 0)";})
+                .style('fill', function(d, i) { return colors[i];});
         }
 
     });

@@ -1,15 +1,44 @@
-<div class="iapp-detail-inner-wrap">
-    <h2 class="iapp-detail-head"><%=full_state%></h2>
-    <h4 class="iapp-detail-sub-head"><%=state%></h4>
-    <div class="iapp-detail-group">
-        <span class="iapp-detail-data-label">Total untested kits: </span>
-        <span class="iapp-detail-data-text label label-primary"><%= total_dead %></span>
+<div class="iapp-detail-wrap">
+    <div class="iapp-detail-inner-wrap">
+        <div class="iapp-detail-close-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/close-icon-grey-2.svg" alt="close"></div>
+        <h2 class="iapp-detail-head"><%=full_state%></h2>
+        <div class="iapp-detail-group">
+        </div>
+        <div class="iapp-detail-chart"></div>
+        <h4 class="iapp-detail-info">Total Dead: <%=total_dead %></h4>
+        <h4 class="iapp-detail-info">Fleeing Driver: <%=fleeing_driver %></h4>
+        <h4 class="iapp-detail-info">Police: <%=police %></h4>
+        <h4 class="iapp-detail-info">Non-Violators: <% print(fleeing_other + bystanders) %></h4>
+        <h3 class="iapp-detail-sub-head">Top Counties</h3>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>County</th>
+                    <th>Total Dead</th>
+                    <th>Police</th>
+                    <th>Non-violators</th>
+                    <th>Fleeing Drivers</th>
+                </tr>
+            </thead>
+            <tbody>
+            <% _.each(top_counties, function(county) { %>
+                <tr>
+                    <td><%= county.county %></td>
+                    <td><%= county.total_dead %></td>
+                    <td><%= county.police %></td>
+                    <td><% print(county.bystanders + county.fleeing_other) %></td>
+                    <td><%= county.fleeing_driver %></td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
     </div>
-</div>
-<div class="iapp-detail-share-wrap">
-    <div class="iapp-detail-share-button">Share</div>
-    <div class="iapp-share-icon-wrap">
-        <a href="https://twitter.com/intent/tweet?url=<%=twitterShare%>&text=<%=encodedShare%>" class="iapp-share-button iapp-share-icon iapp-share-twitter iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/twitter.svg" alt="Twitter share"></a>
-        <a href='https://www.facebook.com/dialog/feed?display=popup&app_id=<%=fb_id%>&link=<%=fbShare%>&picture=<%=stillimage%>&name=&description=<%=encodedShare%>&redirect_uri=<%=fb_redirect%>' class="iapp-share-button iapp-share-icon iapp-share-facebook iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/facebook.svg" alt="Facebook share"></a>
+    <div class="iapp-detail-share-wrap">
+        <div class="iapp-detail-share-button">Share</div>
+        <div class="iapp-share-icon-wrap">
+            <a href="https://twitter.com/intent/tweet?url=<%=twitterShare%>&text=<%=encodedShare%>" class="iapp-share-button iapp-share-icon iapp-share-twitter iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/twitter.svg" alt="Twitter share"></a>
+            <a href='https://www.facebook.com/dialog/feed?display=popup&app_id=<%=fb_id%>&link=<%=fbShare%>&picture=<%=stillimage%>&name=&description=<%=encodedShare%>&redirect_uri=<%=fb_redirect%>' class="iapp-share-button iapp-share-icon iapp-share-facebook iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/facebook.svg" alt="Facebook share"></a>
+        </div>
     </div>
+    <div class="iapp-detail-background"></div>
 </div>

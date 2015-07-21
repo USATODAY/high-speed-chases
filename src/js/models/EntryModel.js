@@ -7,9 +7,8 @@ define([
 ], function(jQuery, _, Backbone, helpers, config) {
     return Backbone.Model.extend({
         initialize: function() {
-            console.log(this.get('full_state'));
             this.set({
-                "slug": helpers.slugify(this.get('full_state'))
+                "slug": helpers.slugify(this.get('state'))
             });
             this.setShare();
         },
@@ -26,15 +25,15 @@ define([
             });
         },
         createFbShareURL: function() {
-            var slug = this.get('state');
+            var slug = this.get('slug');
             var baseURL = window.location.origin + window.location.pathname;
-            return encodeURI(baseURL + "%23state/" + slug); 
+            return encodeURI(baseURL + "%23search/" + slug); 
         },
 
         createTwitterShareURL: function() {
-            var slug = this.get('state');
+            var slug = this.get('slug');
             var baseURL = window.location.origin + window.location.pathname;
-            return encodeURIComponent(baseURL + "#state/" + slug); 
+            return encodeURIComponent(baseURL + "#search/" + slug); 
         },
 
         createEmailLink: function(videoID) {
