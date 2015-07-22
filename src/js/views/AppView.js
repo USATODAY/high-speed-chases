@@ -42,7 +42,6 @@ define([
             "click .iapp-play-button": "showVideo",
             "click .iapp-info-close": "closeInfo",
             "click .js-iapp-info-background": "closeInfo"
-
         },
         template: templates["AppView.html"],
         filterItems: _.throttle(function(filterTerm) {
@@ -68,6 +67,13 @@ define([
             } else {
                 this.resultsView.hide();
             }
+        },
+        hideResults: function() {
+            var _this = this;
+
+            // a little ugly. wait to hide results view for 100ms to allow for click on detail
+            // bind to results view to avoid generic window this in method
+            _.delay(_this.resultsView.hide.bind(_this.resultsView), 200);
         },
         skipVideo: function() {
             this.$('.iapp-search-wrap').removeClass('iapp-fade');

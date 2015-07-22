@@ -53,7 +53,7 @@ __p += '</td>\n                <td>' +
 ((__t = ( county.fleeing_driver )) == null ? '' : __t) +
 '</td>\n            </tr>\n        ';
  }); ;
-__p += '\n        </tbody>\n    </table>\n</div>\n<div class="iapp-detail-share-wrap">\n    <div class="iapp-detail-share-button">Share</div>\n    <div class="iapp-share-icon-wrap">\n        <a href="https://twitter.com/intent/tweet?url=' +
+__p += '\n        </tbody>\n    </table>\n</div>\n<div class="iapp-detail-share-wrap">\n    <span class="iapp-detail-share-button">Share</span>\n    <div class="iapp-share-icon-wrap">\n        <a href="https://twitter.com/intent/tweet?url=' +
 ((__t = (twitterShare)) == null ? '' : __t) +
 '&text=' +
 ((__t = (encodedShare)) == null ? '' : __t) +
@@ -96,7 +96,7 @@ __p += '\n    <div class="video-wrap video-wrap-mobile"> \n';
  } else { ;
 __p += '\n    <div class="video-wrap"> \n';
  } ;
-__p += '\n    <div class="video-intro-overlay">\n        <div class="video-intro-overlay-content">\n            <img class="iapp-branding-logo video-overlay-logo" src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/logo.png" alt="Untested rape kits">\n            <p class="video-intro-overlay-chatter">USA TODAY obtained records identifying more than 70,000 sexual assault kits booked into evidence at hundreds of the nation’s law enforcement agencies that have never been tested. Use this tool to look up the number of sexual assault kits held by those agencies. Not every agency is in our database. Some were not surveyed; others declined to respond or release records.</p>\n            ';
+__p += '\n    <div class="video-intro-overlay">\n        <div class="video-intro-overlay-content">\n            <h2 class="iapp-header">High Speed Chases</h2>\n                <p class="video-intro-overlay-chatter">Amet atque impedit distinctio soluta consectetur? Adipisci consectetur neque fuga modi distinctio provident! A soluta sed aspernatur eos sit possimus eveniet, corrupti mollitia? Sed odit id quaerat consectetur sint! Nemo.</p>\n            ';
  if (!isMobile) {;
 __p += '\n                <div class="iapp-tablet-play-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"></div>\n                <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Skip Video</div></div>\n            ';
  } ;

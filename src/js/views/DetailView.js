@@ -10,6 +10,7 @@ define([
 ], function(jQuery, _, Backbone, d3, config, router, templates, Analytics) {
     return Backbone.View.extend({
         initialize: function() {
+            this.listenTo(Backbone, "detail:draw", this.drawChart);
             router.navigate('search/' + this.model.get('slug'));
             this.render();
         },
@@ -48,9 +49,11 @@ define([
             );
         },
         drawChart: function() {
+            console.log("draw");
             var width = this.$(".iapp-detail-inner-wrap").outerWidth();
             var height = 30;
             var $el = $('.iapp-detail-chart');
+            console.log($el);
             var $el2 = this.$('.iapp-detail-chart');
             var modelJSON = this.model.toJSON();
             var colors = ["blue", "red", "green"];

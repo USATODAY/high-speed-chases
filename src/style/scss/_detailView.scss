@@ -75,7 +75,7 @@ Detail Share
 
 .iapp-detail-share-wrap {
     bottom: 10px;
-    position: absolute;
+    position: relative;
     right: 10px;
     z-index: 105;
 }
@@ -86,6 +86,7 @@ Detail Share
     border-radius: 5px;
     color: white;
     cursor: pointer;
+    display: none;
     font-family: "Futura Today Light", Arial, sans-serif;
     opacity: 0.6;
     padding: 10px;
@@ -103,11 +104,11 @@ Detail Share
 }
 
 .iapp-share-icon-wrap {
-    bottom: 50px;
-    opacity: 0;
-    position: absolute;
-    right: 10px;
-    width: 50px;
+    // bottom: 50px;
+    // opacity: 0;
+    // position: absolute;
+    left: 10px;
+    width: 100px;
     transition: all 250ms ease;
     z-index: 500;
     &.iapp-show {
@@ -120,8 +121,9 @@ Detail Share
 }
 
 .iapp-share-icon {
-    display: block;
-    transform: translate(0, 300%);
+    display: inline-block;
+    // transform: translate(0, 300%);
+    width: 40px;
     &:nth-child(0n+1) {
         transition: all 250ms ease;
     }
@@ -132,6 +134,6 @@ Detail Share
 
 .iapp-show {
     .iapp-share-icon {
-        transform: translate(0, 0);
+        // transform: translate(0, 0);
     }
 }
