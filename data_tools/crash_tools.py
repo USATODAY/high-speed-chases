@@ -47,7 +47,7 @@ def find_county_data(states_list, counties_list):
     for state_dict in states_list:
         if state_dict["state"] != "US TOTAL":
             top_10 = find_top_10_for_state(counties_list, state_dict["state"])
-            state_dict["top_counties"] = top_10
+            state_dict["top_10"] = top_10
             if state_dict["state"] != "UNKNOWN":
                 full_state = getattr(us.states, state_dict["state"]).name
                 state_dict["full_state"] = full_state

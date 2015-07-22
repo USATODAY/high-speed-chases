@@ -36,10 +36,8 @@ define(
                     $videoEl.css({"width" : "100%", "left" : "0", "height": height.toString() + "px", "top": offSetTop.toString() + "px"});
                 } else {
                     // do this when the window is too wide
-                    console.log("too wide");
                     var winHeight = window.innerHeight;
                     var width = winHeight * 16/9;
-                    console.log(width);
                     var offSetLeft = (window.innerWidth - width ) / 2;
                     $videoEl.css({"height": winHeight.toString() + "px", "width": width.toString() + "px", "top": "0%", "left": offSetLeft.toString() + "px"});
                 }

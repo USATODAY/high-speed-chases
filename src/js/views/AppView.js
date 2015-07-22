@@ -23,12 +23,15 @@ define([
             this.$el.html(this.template({isMobile: config.isMobile || config.isTablet}));
             var videoView = new VideoView();
 
+            var usModel = this.collection.findWhere({'full_state': 'US Total'});
+
             if (config.isMobile || config.isTablet) {
                 this.$('.iapp-mobile-video-container').html(videoView.render().el);
             } else {
                 this.$el.append(videoView.render().el);
             }
             this.resultsView = new ResultsView({el: this.$(".iapp-search-results-wrap")});
+            Backbone.trigger("detail:show", usModel);
             Backbone.history.start();
             return this;
         },
@@ -57,6 +60,7 @@ define([
         },
         onSearchChange: function(e) {
             var _this = this;
+            this.resultsView.show();
             var filterTerm = this.$('.iapp-search-input').val();
             var filteredItems = this.filterItems(filterTerm);
             if (filterTerm !== "") {
@@ -77,7 +81,7 @@ define([
             this.$('.iapp-search-input').val('');
             this.onSearchChange();
             this.detailView = new DetailView({model: entryModel});
-            this.$el.append(this.detailView.el);
+            this.$('.iapp-detail-container').html(this.detailView.el);
             this.detailView.drawChart();
         },
         onVideoEnd: function() {

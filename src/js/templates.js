@@ -6,7 +6,7 @@ this["templates"]["AppView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-search-wrap iapp-fade">\n    <div class="iapp-search ">\n        <div class="iapp-header">High Speed Chases</div>\n                <p class="iapp-chatter">Ipsum consectetur ipsam pariatur a necessitatibus dolorem ratione. Delectus libero enim obcaecati ea voluptatem facilis quam illo! Enim ipsa quia consectetur praesentium ex obcaecati, adipisci illum. Consequatur magnam hic libero?</p>\n        <div class="iapp-search-input-group">\n            <img class="iapp-search-icon" src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/search-icon.svg" alt="Info">\n            <input class="iapp-search-input" type="text" placeholder="Search states">\n        </div>\n        <div class="iapp-search-results-wrap"></div>\n    </div>\n    <div class="iapp-info-button">\n        <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/question-icon.svg" alt="Info">\n    </div>\n    <div class="iapp-play-button">\n        <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video">\n    </div>\n</div>\n\n<div class="iapp-info-wrap">\n    <div class="iapp-info-close"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/close-icon-white.svg" alt="close"></div>\n    <div class="iapp-info-inner-wrap">\n        <h3 class="iapp-info-header">What these figures show</h3>\n        <p class="iapp-info-p">The USA TODAY Media Network obtained data on the number of untested sexual assault kits from state and local law enforcement agencies by submitting more than 400 records requests under freedom of information laws in all 50 states.</p>\n        <p class="iapp-info-p">The requests sought the number of sexual assault kits that were booked into evidence from 2000 to 2014, but not submitted to crime labs for testing as of early 2015.</p>\n        <p class="iapp-info-p">Requests went to 140 of the nation’s largest law enforcement agencies and more than 200 additional police and sheriff’s departments of varying sizes. The Network also requested from state criminal justice agencies and attorneys general any statewide inventories of untested sexual assault evidence kits.</p>\n        <p class="iapp-info-p">The records reflect the untested evidence kits held by a fraction of the nation’s approximately 18,000 law enforcement agencies. No government entity has conducted a comprehensive national inventory of untested sexual assault kits.</p>\n        <p class="iapp-info-p">The records obtained typically reflect numbers of sexual assault evidence kits taken into evidence since 2000. However, where data could only be obtained from a particular agency for a portion of that time or for a longer period of time (including prior to 2000), those figures are also included in the total</p>\n    \n        <h3 class="iapp-info-header">Credits</h3>\n        <p class="iapp-info-p">John Kelly, Stephen Reilly, Shawn Sullivan, Mitchell Thorson, Bethany Fewell, Zachary Walker, USA TODAY</p>\n    </div>\n    <div class="iapp-detail-background js-iapp-info-background"></div>\n</div>\n<div class="iapp-mobile-video-container"></div>\n';
+__p += '<div class="iapp-search-wrap iapp-fade">\n    <div class="iapp-search ">\n        <div class="iapp-header">High Speed Chases</div>\n                <p class="iapp-chatter">Ipsum consectetur ipsam pariatur a necessitatibus dolorem ratione. Delectus libero enim obcaecati ea voluptatem facilis quam illo! Enim ipsa quia consectetur praesentium ex obcaecati, adipisci illum. Consequatur magnam hic libero?</p>\n        <div class="iapp-search-input-group">\n            <img class="iapp-search-icon" src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/search-icon.svg" alt="Info">\n            <input class="iapp-search-input" type="text" placeholder="Search states">\n        </div>\n        <div class="iapp-search-results-wrap" style="display: none">\n            <div class="iapp-search-results-inner-wrap"></div>\n        </div>\n        <div class="iapp-detail-container"></div>\n    </div>\n    <div class="iapp-info-button">\n        <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/question-icon.svg" alt="Info">\n    </div>\n    <div class="iapp-play-button">\n        <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video">\n    </div>\n</div>\n\n<div class="iapp-info-wrap">\n    <div class="iapp-info-close"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/close-icon-white.svg" alt="close"></div>\n    <div class="iapp-info-inner-wrap">\n        <h3 class="iapp-info-header">What these figures show</h3>\n        <p class="iapp-info-p">The USA TODAY Media Network obtained data on the number of untested sexual assault kits from state and local law enforcement agencies by submitting more than 400 records requests under freedom of information laws in all 50 states.</p>\n        <p class="iapp-info-p">The requests sought the number of sexual assault kits that were booked into evidence from 2000 to 2014, but not submitted to crime labs for testing as of early 2015.</p>\n        <p class="iapp-info-p">Requests went to 140 of the nation’s largest law enforcement agencies and more than 200 additional police and sheriff’s departments of varying sizes. The Network also requested from state criminal justice agencies and attorneys general any statewide inventories of untested sexual assault evidence kits.</p>\n        <p class="iapp-info-p">The records reflect the untested evidence kits held by a fraction of the nation’s approximately 18,000 law enforcement agencies. No government entity has conducted a comprehensive national inventory of untested sexual assault kits.</p>\n        <p class="iapp-info-p">The records obtained typically reflect numbers of sexual assault evidence kits taken into evidence since 2000. However, where data could only be obtained from a particular agency for a portion of that time or for a longer period of time (including prior to 2000), those figures are also included in the total</p>\n    \n        <h3 class="iapp-info-header">Credits</h3>\n        <p class="iapp-info-p">John Kelly, Stephen Reilly, Shawn Sullivan, Mitchell Thorson, Bethany Fewell, Zachary Walker, USA TODAY</p>\n    </div>\n    <div class="iapp-detail-background js-iapp-info-background"></div>\n</div>\n<div class="iapp-mobile-video-container"></div>\n';
 
 }
 return __p
@@ -17,35 +17,47 @@ obj || (obj = {});
 var __t, __p = '', __e = _.escape, __j = Array.prototype.join;
 function print() { __p += __j.call(arguments, '') }
 with (obj) {
-__p += '<div class="iapp-detail-wrap">\n    <div class="iapp-detail-inner-wrap">\n        <div class="iapp-detail-close-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/close-icon-grey-2.svg" alt="close"></div>\n        <h2 class="iapp-detail-head">' +
+__p += '<div class="iapp-detail-inner-wrap">\n    <h2 class="iapp-detail-head">' +
 ((__t = (full_state)) == null ? '' : __t) +
-'</h2>\n        <div class="iapp-detail-group">\n        </div>\n        <div class="iapp-detail-chart"></div>\n        <h4 class="iapp-detail-info">Total Dead: ' +
+'</h2>\n    <div class="iapp-detail-group">\n    </div>\n    <div class="iapp-detail-chart"></div>\n    <h4 class="iapp-detail-info">Total Dead: ' +
 ((__t = (total_dead )) == null ? '' : __t) +
-'</h4>\n        <h4 class="iapp-detail-info">Fleeing Driver: ' +
+'</h4>\n    <h4 class="iapp-detail-info">Fleeing Driver: ' +
 ((__t = (fleeing_driver )) == null ? '' : __t) +
-'</h4>\n        <h4 class="iapp-detail-info">Police: ' +
+'</h4>\n    <h4 class="iapp-detail-info">Police: ' +
 ((__t = (police )) == null ? '' : __t) +
-'</h4>\n        <h4 class="iapp-detail-info">Non-Violators: ';
+'</h4>\n    <h4 class="iapp-detail-info">Non-Violators: ';
  print(fleeing_other + bystanders) ;
-__p += '</h4>\n        <h3 class="iapp-detail-sub-head">Top Counties</h3>\n        <table class="table table-condensed">\n            <thead>\n                <tr>\n                    <th>County</th>\n                    <th>Total Dead</th>\n                    <th>Police</th>\n                    <th>Non-violators</th>\n                    <th>Fleeing Drivers</th>\n                </tr>\n            </thead>\n            <tbody>\n            ';
- _.each(top_counties, function(county) { ;
-__p += '\n                <tr>\n                    <td>' +
+__p += '</h4>\n    ';
+ if (full_state == "US Total") { ;
+__p += '\n    <h3 class="iapp-detail-sub-head">Top States</h3>\n    ';
+} else {;
+__p += '\n    <h3 class="iapp-detail-sub-head">Top Counties</h3>\n    ';
+};
+__p += '\n    <table class="table table-condensed">\n        <thead>\n            <tr>\n                ';
+ if (full_state == "US Total") { ;
+__p += '\n                <th>State</th>\n                ';
+} else {;
+__p += '\n                <th>County</th>\n                ';
+};
+__p += '\n                <th>Total Dead</th>\n                <th>Police</th>\n                <th>Non-violators</th>\n                <th>Fleeing Drivers</th>\n            </tr>\n        </thead>\n        <tbody>\n        ';
+ _.each(top_10, function(county) { ;
+__p += '\n            <tr>\n                <td>' +
 ((__t = ( county.county )) == null ? '' : __t) +
-'</td>\n                    <td>' +
+'</td>\n                <td>' +
 ((__t = ( county.total_dead )) == null ? '' : __t) +
-'</td>\n                    <td>' +
+'</td>\n                <td>' +
 ((__t = ( county.police )) == null ? '' : __t) +
-'</td>\n                    <td>';
+'</td>\n                <td>';
  print(county.bystanders + county.fleeing_other) ;
-__p += '</td>\n                    <td>' +
+__p += '</td>\n                <td>' +
 ((__t = ( county.fleeing_driver )) == null ? '' : __t) +
-'</td>\n                </tr>\n            ';
+'</td>\n            </tr>\n        ';
  }); ;
-__p += '\n            </tbody>\n        </table>\n    </div>\n    <div class="iapp-detail-share-wrap">\n        <div class="iapp-detail-share-button">Share</div>\n        <div class="iapp-share-icon-wrap">\n            <a href="https://twitter.com/intent/tweet?url=' +
+__p += '\n        </tbody>\n    </table>\n</div>\n<div class="iapp-detail-share-wrap">\n    <div class="iapp-detail-share-button">Share</div>\n    <div class="iapp-share-icon-wrap">\n        <a href="https://twitter.com/intent/tweet?url=' +
 ((__t = (twitterShare)) == null ? '' : __t) +
 '&text=' +
 ((__t = (encodedShare)) == null ? '' : __t) +
-'" class="iapp-share-button iapp-share-icon iapp-share-twitter iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/twitter.svg" alt="Twitter share"></a>\n            <a href=\'https://www.facebook.com/dialog/feed?display=popup&app_id=' +
+'" class="iapp-share-button iapp-share-icon iapp-share-twitter iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/twitter.svg" alt="Twitter share"></a>\n        <a href=\'https://www.facebook.com/dialog/feed?display=popup&app_id=' +
 ((__t = (fb_id)) == null ? '' : __t) +
 '&link=' +
 ((__t = (fbShare)) == null ? '' : __t) +
@@ -55,7 +67,7 @@ __p += '\n            </tbody>\n        </table>\n    </div>\n    <div class="ia
 ((__t = (encodedShare)) == null ? '' : __t) +
 '&redirect_uri=' +
 ((__t = (fb_redirect)) == null ? '' : __t) +
-'\' class="iapp-share-button iapp-share-icon iapp-share-facebook iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/facebook.svg" alt="Facebook share"></a>\n        </div>\n    </div>\n    <div class="iapp-detail-background"></div>\n</div>\n';
+'\' class="iapp-share-button iapp-share-icon iapp-share-facebook iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/facebook.svg" alt="Facebook share"></a>\n    </div>\n</div>\n';
 
 }
 return __p

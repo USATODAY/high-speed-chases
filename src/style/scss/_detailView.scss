@@ -11,7 +11,7 @@
     background-color: white;
     border-radius: 5px;
     @include BoxShadowHelper(4);
-    margin: 4em auto;
+    margin: 1em auto 4em auto;
     max-width: 600px;
     padding: 2em;
     position: relative;
