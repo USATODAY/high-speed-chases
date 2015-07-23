@@ -54,7 +54,7 @@
 }
 
 .iapp-detail-data-text.label {
-    background-color: $project-red;
+    background-color: #B54F1B;
     font-size: 1.2em;
 }
 
@@ -136,4 +136,12 @@ Detail Share
     .iapp-share-icon {
         // transform: translate(0, 0);
     }
+}
+
+/******
+Detail Chart
+******/
+
+.iapp-detail-chart {
+    margin-bottom: 2em;
 }

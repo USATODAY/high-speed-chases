@@ -109,11 +109,11 @@ define([
                 .attr("transform", "translate(20, 0)")
                 .text(function(d, i) {
                     if (i < 1) {
-                        return "Police";
+                        return "Police: " + d;
                     } else if (i < 2) {
-                        return "Fleeing Drivers";
+                        return "Fleeing Drivers: " + d;
                     } else {
-                        return "Non-violators";
+                        return "Non-violators: " + d;
                     }
                 });
         }
