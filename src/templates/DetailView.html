@@ -1,12 +1,11 @@
 <div class="iapp-detail-inner-wrap">
     <h2 class="iapp-detail-head"><%=full_state%></h2>
     <div class="iapp-detail-group">
-    </div>
+            <span class="iapp-detail-data-label">Total Dead: </span>
+            <span class="iapp-detail-data-text label label-primary"><%= total_pretty %></span>
+        </div>
+    <h3 class="iapp-detail-sub-head">Breakdown of deaths</h3>
     <div class="iapp-detail-chart"></div>
-    <h4 class="iapp-detail-info">Total Dead: <%=total_dead %></h4>
-    <h4 class="iapp-detail-info">Fleeing Driver: <%=fleeing_driver %></h4>
-    <h4 class="iapp-detail-info">Police: <%=police %></h4>
-    <h4 class="iapp-detail-info">Non-Violators: <% print(fleeing_other + bystanders) %></h4>
     <% if (full_state == "US Total") { %>
     <h3 class="iapp-detail-sub-head">Top States</h3>
     <%} else {%>

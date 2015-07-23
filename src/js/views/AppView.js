@@ -30,8 +30,9 @@ define([
             } else {
                 this.$el.append(videoView.render().el);
             }
+            this.detailView = new DetailView({model: usModel});
+            this.$('.iapp-detail-container').html(this.detailView.el);
             this.resultsView = new ResultsView({el: this.$(".iapp-search-results-wrap")});
-            Backbone.trigger("detail:show", usModel);
             Backbone.history.start();
             return this;
         },
@@ -86,13 +87,14 @@ define([
         onDetailShow: function(entryModel) {
             this.$('.iapp-search-input').val('');
             this.onSearchChange();
+            console.log(entryModel.get("slug"));
+            router.navigate("search/" + entryModel.get("slug"));
             this.detailView = new DetailView({model: entryModel});
             this.$('.iapp-detail-container').html(this.detailView.el);
             this.detailView.drawChart();
         },
         onVideoEnd: function() {
             this.$('.iapp-search-wrap').removeClass('iapp-fade');
-            router.navigate('search/');
         },
         showVideo: function() {
             Backbone.trigger('video:show');
@@ -104,10 +106,8 @@ define([
         },
         showInfo : function(e) {
             this.$('.iapp-info-wrap').show();
-            router.navigate("info/");
         },
         closeInfo: function(e) {
-            router.navigate("search/");
             this.$('.iapp-info-wrap').hide();
         }
 
