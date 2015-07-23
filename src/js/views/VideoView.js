@@ -5,10 +5,11 @@ define(
     'backbone',
     'templates',
     'config',
+    'router',
     'jquery_ui',
     'jquery_ui_touch_punch'
   ],
-  function(jQuery, _, Backbone, templates, config) {
+  function(jQuery, _, Backbone, templates, config, router) {
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "window:resize", this.resizeVideo);
@@ -67,6 +68,10 @@ define(
         },
         skipVideo: function() {
             this.$('.video-wrap').hide();
+            console.log(Backbone.history.getFragment());
+            if (Backbone.history.getFragment() === "") {
+                router.navigate("/search");
+            }
             Backbone.trigger('video:end');
             this.video.pause();
         },

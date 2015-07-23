@@ -10,8 +10,7 @@ define([
 ], function(jQuery, _, Backbone, d3, config, router, templates, Analytics) {
     return Backbone.View.extend({
         initialize: function() {
-            this.listenTo(Backbone, "detail:draw", this.drawChart);
-            router.navigate('search/' + this.model.get('slug'));
+            this.listenTo(Backbone, "detail:draw", this.onDetailDraw);
             this.render();
         },
         render: function() {
@@ -48,27 +47,75 @@ define([
                 "menubar=no,toolbar=no,resizable=yes,scrollbars=yes,width=" + width + ",height=" + height + ",top=" + top + ",left=" + left
             );
         },
+        onDetailDraw: function() {
+            this.drawChart();
+        },
         drawChart: function() {
-            console.log("draw");
-            var width = this.$(".iapp-detail-inner-wrap").outerWidth();
-            var height = 30;
-            var $el = $('.iapp-detail-chart');
-            console.log($el);
-            var $el2 = this.$('.iapp-detail-chart');
+            this.$('.iapp-detail-chart').empty();
+            var width = this.$(".iapp-detail-inner-wrap").width();
+            var colors = ["#1874B4", "#A72116", "#177C37"];
+            var barHeight = 30;
+            var height = 50;
             var modelJSON = this.model.toJSON();
-            var colors = ["blue", "red", "green"];
             var data = [modelJSON.police, modelJSON.fleeing_driver, modelJSON.bystanders + modelJSON.fleeing_other];
-            var svg = d3.select('.iapp-detail-chart').append("svg")
+
+            var x = d3.scale.linear()
+                .domain([0, d3.sum(data)])
+                .range([0, width]);
+            
+
+            this.svg = d3.select('.iapp-detail-chart').append("svg")
                 .attr("width", width)
                 .attr("height", height);
-            svg.selectAll('rect')
+
+            this.svg.selectAll('rect')
                 .data(data)
                 .enter()
                 .append('rect')
-                .attr("width", 30)
-                .attr("height", height)
-                .attr("transform", function(d, i) { return "translate(" + i * 30 + ", 0)";})
-                .style('fill', function(d, i) { return colors[i];});
+                .attr("width", 0)
+                .attr("height", barHeight)
+                .attr("transform", function(d, i) { 
+                    var previousWidth = x(data[i-1]);
+                    return "translate(" + previousWidth + ", 0)";
+                })
+                .style('fill', function(d, i) { return colors[i];})
+                .transition()
+                .duration(500)
+                .attr("width", x);
+
+            var key = this.svg.append("g")
+                .attr("class", "iapp-chart-key")
+                .attr("transform", "translate(0, " + (barHeight + 16) + ")");
+            
+            key.selectAll('.key-item')
+                .data(data)
+                .enter()
+                .append('g')
+                .attr('class', 'key-item')
+                .attr("transform", function(d, i) {
+                    return "translate(" + ((width / 3) * i) + ", 0)";
+                })
+                .append('rect')
+                .attr("width", 16)
+                .attr("height", 16)
+                .attr("x", 0)
+                .attr("y", -12)
+                .attr("fill", function(d, i) {
+                    return colors[i];
+                });
+
+            key.selectAll('.key-item')
+                .append("text")
+                .attr("transform", "translate(20, 0)")
+                .text(function(d, i) {
+                    if (i < 1) {
+                        return "Police";
+                    } else if (i < 2) {
+                        return "Fleeing Drivers";
+                    } else {
+                        return "Non-violators";
+                    }
+                });
         }
 
     });
