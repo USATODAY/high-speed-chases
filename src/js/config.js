@@ -2,7 +2,7 @@ define([
    "jquery",
 ], function(jQuery) {
     //set project data URL here
-    var dataURL = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/data/data.json";
+    var dataURL = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/data/data.json";
     //set project image path here
     var imagePath = "";
 
@@ -12,6 +12,8 @@ define([
 
     var isMobile, fb_app_id;
     var isTablet = false;
+
+    var blnIframeEmbed = window != window.parent;
 
     var staticInfo = JSON.parse(jQuery(".staticinfo").html());
 
@@ -37,6 +39,7 @@ define([
         isMobile: isMobile,
         isTablet: isTablet,
         defaultShareLanguage: defaultShareLanguage,
-        defaultShareImage: defaultShareImage
+        defaultShareImage: defaultShareImage,
+        isIframe: blnIframeEmbed
     };
 });

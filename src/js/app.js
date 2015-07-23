@@ -16,28 +16,21 @@ define(
         init: function() {
             var dataManager = new DataManager(config.dataURL);
             var $pageWrap = jQuery('.iapp-page-wrap');
-            updateHeight();
-            dataManager.getData(function(data) { 
+            dataManager.getData(function(data) {
                 var entriesCollection = new EntriesCollection(data);
                 var appView = new AppView({collection: entriesCollection});
                 $pageWrap.append(appView.el);
+                Backbone.trigger("detail:draw");
             });
 
             $(window).resize(onResize);
 
             function onResize(e) {
                 Backbone.trigger("window:resize");
-                updateHeight(e);
             }
 
-            function updateHeight(e) {
-                var newHeight;
-                if (!config.isMobile) {
-                    newHeight = window.innerHeight - 40;
-                } else {
-                    newHeight = window.innerHeight - 50;
-                }
-                $pageWrap.height(newHeight);
+            if (config.isIframe) {
+                $pageWrap.addClass('iapp-embed');
             }
         }
 

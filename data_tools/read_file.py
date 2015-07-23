@@ -16,7 +16,7 @@ def open_file():
 def read_sheet(sh):
     column_names = []
     for i in range(sh.ncols):
-        header = sh.cell(0, i).value
+        header = sh.cell(0, i).value.replace(" ", "_").lower()
         column_names.append(header)
  
     # list to store each row's data
@@ -44,7 +44,6 @@ def read_wb(wb):
     and each value is a list of sheet values.
     """
     sheets_dict= {}
-    print wb.nsheets
     for sheet_index in range(wb.nsheets):
         sh = wb.sheet_by_index(sheet_index)
         sh_name = str(sh.name)
@@ -56,10 +55,13 @@ def read_wb(wb):
 def format_data():
     print "Opening file..."
     wb = open_file()
+    print "Reading file..."
     wb_data = read_wb(wb)
+    print "Formatting data..."
     formatted_data = crash_tools.find_county_data(wb_data["State Breakdown"], wb_data["County Breakdown"])
     with open (output_json_file, 'w') as output_file:
         json.dump(formatted_data, output_file)
+    print "Complete!"
  
 if __name__ == "__main__":
     format_data()

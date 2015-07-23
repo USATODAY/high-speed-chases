@@ -1,9 +1,19 @@
+.iapp-page-wrap {
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+
+.iapp-page-wrap.iapp-embed {
+    width: 90%;
+}
+
 .iapp-search-wrap {
     bottom: 0;
     left: 0;
     opacity: 1;
-    overflow: hidden;
-    position: absolute;
+    position: relative;
     padding: 60px 0;
     right: 0;
     top: 0;
@@ -11,14 +21,17 @@
     transform: translate(0, 0);
 
     @media (max-width: 600px) {
-        padding: 10px 0;
-        // position: static;
+        padding: 10px 0 60px 0;
+        position: relative;
     }
 }
 
 .iapp-fade {
     opacity: 0;
     transform: translate(0, 50px);
+    @media (max-width: 600px) {
+        display: none;
+    }
 }
 
 .iapp-search {
@@ -84,8 +97,12 @@
 .iapp-chatter {
     color: white;
     font-family: "Futura Today Light", Arial, sans-serif;
-    margin: 0.5em auto;
+    margin: 0.5em auto 1em auto;
     width: 90%;
+
+    @media (min-width: 800px) {
+        font-size: 1.1em;
+    }
 }
 
 /******
@@ -115,6 +132,10 @@ Branding
     &:hover {
         opacity: 1;
     }
+
+    @media(min-width: 600px) {
+        bottom: 60px;
+    }
 }
 
 .iapp-play-button {
@@ -124,5 +145,6 @@ Branding
 }
 
 .iapp-video-skip-button {
+    margin-bottom: 1em;
     margin-top: 1em;
 }

@@ -23,17 +23,21 @@ define([
             this.$el.html(this.template({isMobile: config.isMobile || config.isTablet}));
             var videoView = new VideoView();
 
+            var usModel = this.collection.findWhere({'full_state': 'US Total'});
+
             if (config.isMobile || config.isTablet) {
                 this.$('.iapp-mobile-video-container').html(videoView.render().el);
             } else {
                 this.$el.append(videoView.render().el);
             }
             this.resultsView = new ResultsView({el: this.$(".iapp-search-results-wrap")});
+            Backbone.trigger("detail:show", usModel);
             Backbone.history.start();
             return this;
         },
         events: {
             "keyup .iapp-search-input": "onSearchChange",
+            "focus .iapp-search-input": "onSearchFocus",
             "click .iapp-info-button": "showInfo",
             "click .iapp-play-button": "showVideo",
             "click .iapp-info-close": "closeInfo",
@@ -43,12 +47,19 @@ define([
         filterItems: _.throttle(function(filterTerm) {
             filterTerm = helpers.slugify(filterTerm);
             var filteredArray = this.collection.filter(function(entryModel) {
-                return entryModel.get("slug").indexOf(filterTerm) > -1;
+                return entryModel.get("slug").indexOf(filterTerm) > -1 || helpers.slugify(entryModel.get("full_state")).indexOf(filterTerm) > -1;
             });
             return filteredArray;
-        }, 200),
+        }, 300),
+        onSearchFocus: function(e) {
+            //get offset height of input
+            $searchInput = this.$('.iapp-search-input');
+            offset = $searchInput.offset().top;
+            $('article').scrollTop(offset + 100);
+        },
         onSearchChange: function(e) {
             var _this = this;
+            this.resultsView.show();
             var filterTerm = this.$('.iapp-search-input').val();
             var filteredItems = this.filterItems(filterTerm);
             if (filterTerm !== "") {
@@ -57,8 +68,15 @@ define([
                 this.resultsView.hide();
             }
         },
+        hideResults: function() {
+            var _this = this;
+
+            // a little ugly. wait to hide results view for 100ms to allow for click on detail
+            // bind to results view to avoid generic window this in method
+            _.delay(_this.resultsView.hide.bind(_this.resultsView), 200);
+        },
         skipVideo: function() {
-            this.$('.iapp-search').removeClass('iapp-fade');
+            this.$('.iapp-search-wrap').removeClass('iapp-fade');
         },
         onDetailRoute: function(slug) {
             this.skipVideo();
@@ -69,15 +87,16 @@ define([
             this.$('.iapp-search-input').val('');
             this.onSearchChange();
             this.detailView = new DetailView({model: entryModel});
-            this.$el.append(this.detailView.el);
+            this.$('.iapp-detail-container').html(this.detailView.el);
+            this.detailView.drawChart();
         },
         onVideoEnd: function() {
-            this.$('.iapp-search').removeClass('iapp-fade');
+            this.$('.iapp-search-wrap').removeClass('iapp-fade');
             router.navigate('search/');
         },
         showVideo: function() {
             Backbone.trigger('video:show');
-            this.$('.iapp-search').addClass('iapp-fade');
+            this.$('.iapp-search-wrap').addClass('iapp-fade');
         },
         onInfoRoute: function() {
             this.skipVideo();

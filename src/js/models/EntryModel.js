@@ -8,8 +8,7 @@ define([
     return Backbone.Model.extend({
         initialize: function() {
             this.set({
-                "Total_untested_kits_pretty": this.get("Total_untested_kits").toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","),
-                "slug": helpers.slugify(this.get('Agency'))
+                "slug": helpers.slugify(this.get('state'))
             });
             this.setShare();
         },
