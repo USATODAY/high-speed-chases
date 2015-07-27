@@ -6,19 +6,25 @@
         </div>
     <h3 class="iapp-detail-sub-head">Breakdown of deaths</h3>
     <div class="iapp-detail-chart"></div>
-    <% if (full_state == "US Total") { %>
-    <h3 class="iapp-detail-sub-head">Top States</h3>
-    <%} else {%>
+    <div class="iapp-detail-key">
+        <span class="iapp-detail-key-item">
+            <span class="iapp-detail-key-color police"></span>
+            <span class="iapp-detail-key-text">Police: <%=police%></span>
+        </span>
+        <span class="iapp-detail-key-item">
+            <span class="iapp-detail-key-color driver"></span>
+            <span class="iapp-detail-key-text">Fleeing Driver: <%=fleeing_driver%></span>
+        </span>
+        <span class="iapp-detail-key-item">
+            <span class="iapp-detail-key-color non-violator"></span>
+            <span class="iapp-detail-key-text">Non-violator: <%print(bystanders + fleeing_other)%></span>
+        </span>
+    </div>
     <h3 class="iapp-detail-sub-head">Top Counties</h3>
-    <%}%>
     <table class="table table-condensed">
         <thead>
             <tr>
-                <% if (full_state == "US Total") { %>
-                <th>State</th>
-                <%} else {%>
                 <th>County</th>
-                <%}%>
                 <th>Total Dead</th>
                 <th>Police</th>
                 <th>Non-violators</th>

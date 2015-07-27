@@ -56,7 +56,7 @@ define([
             //get offset height of input
             $searchInput = this.$('.iapp-search-input');
             offset = $searchInput.offset().top;
-            $('article').scrollTop(offset + 100);
+            $(window).scrollTop(offset);
         },
         onSearchChange: function(e) {
             var _this = this;
@@ -87,13 +87,13 @@ define([
         onDetailShow: function(entryModel) {
             this.$('.iapp-search-input').val('');
             this.onSearchChange();
-            console.log(entryModel.get("slug"));
             router.navigate("search/" + entryModel.get("slug"));
             this.detailView = new DetailView({model: entryModel});
             this.$('.iapp-detail-container').html(this.detailView.el);
             this.detailView.drawChart();
         },
         onVideoEnd: function() {
+            this.detailView.drawChart();
             this.$('.iapp-search-wrap').removeClass('iapp-fade');
         },
         showVideo: function() {

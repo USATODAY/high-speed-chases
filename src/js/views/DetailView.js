@@ -11,6 +11,7 @@ define([
     return Backbone.View.extend({
         initialize: function() {
             this.listenTo(Backbone, "detail:draw", this.onDetailDraw);
+            this.listenTo(Backbone, "window:resize", this.reDrawChart);
             this.render();
         },
         render: function() {
@@ -50,14 +51,23 @@ define([
         onDetailDraw: function() {
             this.drawChart();
         },
-        drawChart: function() {
+        drawChart: function(simple) {
             this.$('.iapp-detail-chart').empty();
             var width = this.$(".iapp-detail-inner-wrap").width();
+
+            if (config.isMobile) {
+                width = window.innerWidth - 46;
+            }
+
             var colors = ["#1874B4", "#A72116", "#177C37"];
             var barHeight = 30;
-            var height = 50;
+            var height = 30;
             var modelJSON = this.model.toJSON();
             var data = [modelJSON.police, modelJSON.fleeing_driver, modelJSON.bystanders + modelJSON.fleeing_other];
+            var transition = 500;
+            if (simple) {
+                transition = 0;
+            }
 
             var x = d3.scale.linear()
                 .domain([0, d3.sum(data)])
@@ -80,42 +90,13 @@ define([
                 })
                 .style('fill', function(d, i) { return colors[i];})
                 .transition()
-                .duration(500)
+                .duration(transition)
                 .attr("width", x);
-
-            var key = this.svg.append("g")
-                .attr("class", "iapp-chart-key")
-                .attr("transform", "translate(0, " + (barHeight + 16) + ")");
-            
-            key.selectAll('.key-item')
-                .data(data)
-                .enter()
-                .append('g')
-                .attr('class', 'key-item')
-                .attr("transform", function(d, i) {
-                    return "translate(" + ((width / 3) * i) + ", 0)";
-                })
-                .append('rect')
-                .attr("width", 16)
-                .attr("height", 16)
-                .attr("x", 0)
-                .attr("y", -12)
-                .attr("fill", function(d, i) {
-                    return colors[i];
-                });
-
-            key.selectAll('.key-item')
-                .append("text")
-                .attr("transform", "translate(20, 0)")
-                .text(function(d, i) {
-                    if (i < 1) {
-                        return "Police: " + d;
-                    } else if (i < 2) {
-                        return "Fleeing Drivers: " + d;
-                    } else {
-                        return "Non-violators: " + d;
-                    }
-                });
+        },
+        reDrawChart: function() {
+            _.throttle(function(){
+                this.drawChart(true);
+            }, 500).bind(this)();
         }
 
     });
