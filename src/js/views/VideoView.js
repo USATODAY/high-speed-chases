@@ -67,9 +67,7 @@ define(
             }
         },
         skipVideo: function() {
-            console.log("skip");
             this.$('.video-wrap').hide();
-            console.log(Backbone.history.getFragment());
             if (Backbone.history.getFragment() === "") {
                 router.navigate("/search/");
             }

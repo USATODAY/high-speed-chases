@@ -143,5 +143,28 @@ Detail Chart
 ******/
 
 .iapp-detail-chart {
+}
+
+.iapp-detail-key {
     margin-bottom: 2em;
+}
+
+.iapp-detail-key-item {
+    diplay: inline-block;
+    margin-right: 10px;
+    white-space: nowrap;
+
+    @media (max-width: 600px) {
+        font-size: 12px;
+    }
+}
+
+.iapp-detail-key-color {
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+
+    &.police { background-color: #1874B4}
+    &.driver { background-color: #A72116}
+    &.non-violator { background-color: #177C37}
 }
