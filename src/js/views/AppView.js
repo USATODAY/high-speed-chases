@@ -56,7 +56,7 @@ define([
             //get offset height of input
             $searchInput = this.$('.iapp-search-input');
             offset = $searchInput.offset().top;
-            $(window).scrollTop(offset);
+            // $(window).scrollTop(offset - 50);
         },
         onSearchChange: function(e) {
             var _this = this;
@@ -67,6 +67,12 @@ define([
                 this.resultsView.render(filteredItems);
             } else {
                 this.resultsView.hide();
+            }
+            if (e) {
+                if (e.keyCode == 13) {
+                    this.$('.iapp-search-input').blur();
+                }
+            
             }
         },
         hideResults: function() {
@@ -85,12 +91,12 @@ define([
             this.onDetailShow(entryModel);
         },
         onDetailShow: function(entryModel) {
-            this.$('.iapp-search-input').val('');
-            this.onSearchChange();
             router.navigate("search/" + entryModel.get("slug"));
             this.detailView = new DetailView({model: entryModel});
             this.$('.iapp-detail-container').html(this.detailView.el);
             this.detailView.drawChart();
+            this.$('.iapp-search-input').val('');
+            this.onSearchChange();
         },
         onVideoEnd: function() {
             this.detailView.drawChart();
