@@ -123,18 +123,24 @@ Branding
 
 .iapp-info-button {
     bottom: 10px;
+    color: white;
     cursor: pointer;
+    font-family: "Futura Today Light", Arial, sans-serif;
     opacity: 0.5;
     position: absolute;
     right: 10px;
+    text-transform: uppercase;
     transition: opacity 250ms ease;
-    width: 30px;
     &:hover {
         opacity: 1;
     }
 
     @media(min-width: 600px) {
         bottom: 60px;
+    }
+
+    img {
+        width: 30px;
     }
 }
 

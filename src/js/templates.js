@@ -6,7 +6,7 @@ this["templates"]["AppView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-search-wrap iapp-fade">\n    <div class="iapp-search ">\n        <div class="iapp-header">High Speed Chases</div>\n                <p class="iapp-chatter">Ipsum consectetur ipsam pariatur a necessitatibus dolorem ratione. Delectus libero enim obcaecati ea voluptatem facilis quam illo! Enim ipsa quia consectetur praesentium ex obcaecati, adipisci illum. Consequatur magnam hic libero?</p>\n        <div class="iapp-search-input-group">\n            <img class="iapp-search-icon" src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/search-icon.svg" alt="Info">\n            <input class="iapp-search-input" type="text" placeholder="Search states">\n        </div>\n        <div class="iapp-search-results-wrap" style="display: none">\n            <div class="iapp-search-results-inner-wrap"></div>\n        </div>\n        <div class="iapp-detail-container"></div>\n    </div>\n    <div class="iapp-info-button">\n        <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/question-icon.svg" alt="Info">\n    </div>\n    <div class="iapp-play-button">\n        <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video">\n    </div>\n</div>\n\n<div class="iapp-info-wrap">\n    <div class="iapp-info-close"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/close-icon-white.svg" alt="close"></div>\n    <div class="iapp-info-inner-wrap">\n        <h3 class="iapp-info-header">About this data</h3>\n        <p class="iapp-info-p">About this project and data</p>\n    \n        <h3 class="iapp-info-header">Credits</h3>\n        <p class="iapp-info-p">Tom Frank, John Kelly, Shawn Sullivan, Mitchell Thorson, Zachary Walker, USA TODAY</p>\n    </div>\n    <div class="iapp-detail-background js-iapp-info-background"></div>\n</div>\n<div class="iapp-mobile-video-container"></div>\n';
+__p += '<div class="iapp-search-wrap iapp-fade">\n    <div class="iapp-search ">\n        <div class="iapp-header">High Speed Chases</div>\n                <p class="iapp-chatter">Ipsum consectetur ipsam pariatur a necessitatibus dolorem ratione. Delectus libero enim obcaecati ea voluptatem facilis quam illo! Enim ipsa quia consectetur praesentium ex obcaecati, adipisci illum. Consequatur magnam hic libero?</p>\n        <div class="iapp-search-input-group">\n            <img class="iapp-search-icon" src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/search-icon.svg" alt="Info">\n            <input class="iapp-search-input" type="text" placeholder="Search states">\n        </div>\n        <div class="iapp-search-results-wrap" style="display: none">\n            <div class="iapp-search-results-inner-wrap"></div>\n        </div>\n        <div class="iapp-detail-container"></div>\n    </div>\n    <div class="iapp-info-button">\n        <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/question-icon.svg" alt="Info">\n    </div>\n    <div class="iapp-play-button">\n        <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"> <span>Play Video</span>\n    </div>\n</div>\n\n<div class="iapp-info-wrap">\n    <div class="iapp-info-close"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/close-icon-white.svg" alt="close"></div>\n    <div class="iapp-info-inner-wrap">\n        <h3 class="iapp-info-header">About this data</h3>\n        <p class="iapp-info-p">About this project and data</p>\n    \n        <h3 class="iapp-info-header">Credits</h3>\n        <p class="iapp-info-p">Tom Frank, John Kelly, Shawn Sullivan, Mitchell Thorson, Zachary Walker, USA TODAY</p>\n    </div>\n    <div class="iapp-detail-background js-iapp-info-background"></div>\n</div>\n<div class="iapp-mobile-video-container"></div>\n';
 
 }
 return __p
@@ -21,25 +21,25 @@ __p += '<div class="iapp-detail-inner-wrap">\n    <h2 class="iapp-detail-head">'
 ((__t = (full_state)) == null ? '' : __t) +
 '</h2>\n    <div class="iapp-detail-group">\n            <span class="iapp-detail-data-label">Total Dead: </span>\n            <span class="iapp-detail-data-text label label-primary">' +
 ((__t = ( total_pretty )) == null ? '' : __t) +
-'</span>\n        </div>\n    <h3 class="iapp-detail-sub-head">Breakdown of deaths</h3>\n    <div class="iapp-detail-chart"></div>\n    <div class="iapp-detail-key">\n        <span class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color police"></span>\n            <span class="iapp-detail-key-text">Police: ' +
+'</span>\n        </div>\n    <h3 class="iapp-detail-sub-head">Breakdown of deaths</h3>\n    <div class="iapp-detail-chart"></div>\n    <div class="iapp-detail-key">\n        <div class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color police"></span>\n            <span class="iapp-detail-key-text">Police: </span>\n            <br/>\n            <span class="iapp-detail-key-item-number">' +
 ((__t = (police)) == null ? '' : __t) +
-'</span>\n        </span>\n        <span class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color driver"></span>\n            <span class="iapp-detail-key-text">Fleeing Driver: ' +
+'</span>\n        </div>\n        <div class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color driver"></span>\n            <span class="iapp-detail-key-text">Fleeing Driver:</span>\n            <br/>\n            <span class="iapp-detail-key-item-number">' +
 ((__t = (fleeing_driver)) == null ? '' : __t) +
-'</span>\n        </span>\n        <span class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color non-violator"></span>\n            <span class="iapp-detail-key-text">Non-violator: ';
+'</span>\n        </div>\n        <div class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color non-violator"></span>\n            <span class="iapp-detail-key-text">Non-violator: </span>\n            <br/>\n            <span class="iapp-detail-key-item-number">';
 print(bystanders + fleeing_other);
-__p += '</span>\n        </span>\n    </div>\n    <h3 class="iapp-detail-sub-head">Top Counties</h3>\n    <table class="table table-condensed">\n        <thead>\n            <tr>\n                <th>County</th>\n                <th>Total Dead</th>\n                <th>Police</th>\n                <th>Non-violators</th>\n                <th>Fleeing Drivers</th>\n            </tr>\n        </thead>\n        <tbody>\n        ';
+__p += '</span>\n        </div>\n    </div>\n    <h3 class="iapp-detail-sub-head">Top Counties</h3>\n    <table class="table table-condensed">\n        <thead>\n            <tr>\n                <th>County</th>\n                <th>Total Dead</th>\n                <th>Police</th>\n                <th>Fleeing Drivers</th>\n                <th>Non-violators</th>\n            </tr>\n        </thead>\n        <tbody>\n        ';
  _.each(top_10, function(county) { ;
 __p += '\n            <tr>\n                <td>' +
 ((__t = ( county.county )) == null ? '' : __t) +
-'</td>\n                <td>' +
+'</td>\n                <td class="table-number">' +
 ((__t = ( county.total_dead )) == null ? '' : __t) +
-'</td>\n                <td>' +
+'</td>\n                <td class="table-number">' +
 ((__t = ( county.police )) == null ? '' : __t) +
-'</td>\n                <td>';
- print(county.bystanders + county.fleeing_other) ;
-__p += '</td>\n                <td>' +
+'</td>\n                <td class="table-number">' +
 ((__t = ( county.fleeing_driver )) == null ? '' : __t) +
-'</td>\n            </tr>\n        ';
+'</td>\n                <td class="table-number">';
+ print(county.bystanders + county.fleeing_other) ;
+__p += '</td>\n            </tr>\n        ';
  }); ;
 __p += '\n        </tbody>\n    </table>\n</div>\n<div class="iapp-detail-share-wrap">\n    <span class="iapp-detail-share-button">Share</span>\n    <div class="iapp-share-icon-wrap">\n        <a href="https://twitter.com/intent/tweet?url=' +
 ((__t = (twitterShare)) == null ? '' : __t) +
@@ -86,7 +86,7 @@ __p += '\n    <div class="video-wrap"> \n';
  } ;
 __p += '\n    <div class="video-intro-overlay">\n        <div class="video-intro-overlay-content">\n            <h2 class="iapp-header">High Speed Chases</h2>\n                <p class="video-intro-overlay-chatter">Amet atque impedit distinctio soluta consectetur? Adipisci consectetur neque fuga modi distinctio provident! A soluta sed aspernatur eos sit possimus eveniet, corrupti mollitia? Sed odit id quaerat consectetur sint! Nemo.</p>\n            ';
  if (!isMobile) {;
-__p += '\n                <div class="iapp-tablet-play-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"></div>\n                <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Skip Video</div></div>\n            ';
+__p += '\n                <div class="iapp-tablet-play-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"></div>\n                <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Search Data</div></div>\n            ';
  } ;
 __p += '\n        </div>\n        </div>\n        ';
  if (!isMobile) { ;
@@ -104,7 +104,7 @@ __p += '\n            <source src="http://www.gannett-cdn.com/experiments/usatod
 ((__t = ( video_name)) == null ? '' : __t) +
 '.ogv" type="video/ogg" />\n        </video>\n        ';
  if (isMobile || isTablet) { ;
-__p += '\n            <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Skip Video</div></div>\n        ';
+__p += '\n            <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Search Data</div></div>\n        ';
  } ;
 __p += '\n</div>\n\n\n';
 

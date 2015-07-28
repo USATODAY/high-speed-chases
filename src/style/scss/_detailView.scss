@@ -54,7 +54,7 @@
 }
 
 .iapp-detail-data-text.label {
-    background-color: #B54F1B;
+    background-color: #fc6621;
     font-size: 1.2em;
 }
 
@@ -76,7 +76,6 @@ Detail Share
 .iapp-detail-share-wrap {
     bottom: 10px;
     position: relative;
-    right: 10px;
     z-index: 105;
 }
 
@@ -139,6 +138,27 @@ Detail Share
 }
 
 /******
+County Table
+******/
+
+.iapp-detail-container {
+
+    td {
+        font-family: "Futura Today Normal", Arial, sans-serif;
+    }
+
+    td.table-number {
+        text-align: center;
+    }
+
+    th {
+        font-family: "Futura Today DemiBold", Arial, sans-serif;
+        font-weight: 400;
+    }
+
+}
+
+/******
 Detail Chart
 ******/
 
@@ -146,12 +166,21 @@ Detail Chart
 }
 
 .iapp-detail-key {
+    display: flex;
+    flex-direction: row;
+    font-family: "Futura Today DemiBold", Arial, sans-serif;
+    font-weight: 400;
+    justify-content: space-between;
     margin-bottom: 2em;
+
+    @extend .group;
 }
 
 .iapp-detail-key-item {
-    diplay: inline-block;
-    margin-right: 10px;
+    // diplay: inline-block;
+    // float: left;
+    // margin-right: 10px;
+    text-align: center;
     white-space: nowrap;
 
     @media (max-width: 600px) {
@@ -164,7 +193,10 @@ Detail Chart
     height: 16px;
     width: 16px;
 
-    &.police { background-color: #1874B4}
-    &.driver { background-color: #A72116}
-    &.non-violator { background-color: #177C37}
+    &.police { background-color: #2e76ff}
+    &.driver { background-color: #d00028}
+    &.non-violator { background-color: #a6db5e}
+}
+
+.iapp-detail-key-text {
 }

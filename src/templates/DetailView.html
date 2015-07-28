@@ -7,18 +7,24 @@
     <h3 class="iapp-detail-sub-head">Breakdown of deaths</h3>
     <div class="iapp-detail-chart"></div>
     <div class="iapp-detail-key">
-        <span class="iapp-detail-key-item">
+        <div class="iapp-detail-key-item">
             <span class="iapp-detail-key-color police"></span>
-            <span class="iapp-detail-key-text">Police: <%=police%></span>
-        </span>
-        <span class="iapp-detail-key-item">
+            <span class="iapp-detail-key-text">Police: </span>
+            <br/>
+            <span class="iapp-detail-key-item-number"><%=police%></span>
+        </div>
+        <div class="iapp-detail-key-item">
             <span class="iapp-detail-key-color driver"></span>
-            <span class="iapp-detail-key-text">Fleeing Driver: <%=fleeing_driver%></span>
-        </span>
-        <span class="iapp-detail-key-item">
+            <span class="iapp-detail-key-text">Fleeing Driver:</span>
+            <br/>
+            <span class="iapp-detail-key-item-number"><%=fleeing_driver%></span>
+        </div>
+        <div class="iapp-detail-key-item">
             <span class="iapp-detail-key-color non-violator"></span>
-            <span class="iapp-detail-key-text">Non-violator: <%print(bystanders + fleeing_other)%></span>
-        </span>
+            <span class="iapp-detail-key-text">Non-violator: </span>
+            <br/>
+            <span class="iapp-detail-key-item-number"><%print(bystanders + fleeing_other)%></span>
+        </div>
     </div>
     <h3 class="iapp-detail-sub-head">Top Counties</h3>
     <table class="table table-condensed">
@@ -27,18 +33,18 @@
                 <th>County</th>
                 <th>Total Dead</th>
                 <th>Police</th>
-                <th>Non-violators</th>
                 <th>Fleeing Drivers</th>
+                <th>Non-violators</th>
             </tr>
         </thead>
         <tbody>
         <% _.each(top_10, function(county) { %>
             <tr>
                 <td><%= county.county %></td>
-                <td><%= county.total_dead %></td>
-                <td><%= county.police %></td>
-                <td><% print(county.bystanders + county.fleeing_other) %></td>
-                <td><%= county.fleeing_driver %></td>
+                <td class="table-number"><%= county.total_dead %></td>
+                <td class="table-number"><%= county.police %></td>
+                <td class="table-number"><%= county.fleeing_driver %></td>
+                <td class="table-number"><% print(county.bystanders + county.fleeing_other) %></td>
             </tr>
         <% }); %>
         </tbody>

@@ -59,7 +59,7 @@ define([
                 width = window.innerWidth - 46;
             }
 
-            var colors = ["#1874B4", "#A72116", "#177C37"];
+            var colors = ["#2e76ff", "#d00028", "#a6db5e"];
             var barHeight = 30;
             var height = 30;
             var modelJSON = this.model.toJSON();
