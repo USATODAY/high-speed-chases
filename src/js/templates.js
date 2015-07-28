@@ -94,13 +94,13 @@ __p += '\n        <!-- Video Controls -->\n        <div class="video-close-butto
  } ;
 __p += '\n        ';
  if (!isMobile) { ;
-__p += '\n        <video id="introvid" class="bgvideo" poster="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/video_still.jpg">\n        ';
+__p += '\n        <video id="introvid" class="bgvideo" poster="http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/img/video_still.jpg">\n        ';
  } else { ;
-__p += '\n        <video id="introvid" class="bgvideo" controls poster="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/video_still.jpg">\n        ';
+__p += '\n        <video id="introvid" class="bgvideo" controls poster="http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/img/video_still.jpg">\n        ';
  } ;
-__p += '\n            <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/media/' +
+__p += '\n            <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/media/' +
 ((__t = ( video_name)) == null ? '' : __t) +
-'.mp4" type="video/mp4" />\n            <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/media/' +
+'.mp4" type="video/mp4" />\n            <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/media/' +
 ((__t = ( video_name)) == null ? '' : __t) +
 '.ogv" type="video/ogg" />\n        </video>\n        ';
  if (isMobile || isTablet) { ;
