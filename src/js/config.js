@@ -7,7 +7,7 @@ define([
     var imagePath = "";
 
     //set project default share language here
-    var defaultShareLanguage = "Untested Rape Kits";
+    var defaultShareLanguage = "Check police chase deaths state by state";
     var defaultShareImage = imagePath + "fb-post.jpg";
 
     var isMobile, fb_app_id;

@@ -146,8 +146,8 @@ Branding
 
 .iapp-play-button {
     @extend .iapp-info-button;
-    right: none;
     left: 10px;
+    max-width: 150px;
 }
 
 .iapp-video-skip-button {
