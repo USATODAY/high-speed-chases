@@ -56,8 +56,10 @@ define(
             }
         },
         onVideoEnd: function() {
-            this.$('.video-wrap').fadeOut();
-            Backbone.trigger('video:end');
+            if (!config.isMobile) {
+                this.$('.video-wrap').fadeOut();
+                Backbone.trigger('video:end');
+            }
         },
         showVideo: function() {
             this.video.play();
