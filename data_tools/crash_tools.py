@@ -39,7 +39,7 @@ def find_top_10_counties(counties_list):
     Looks through list of all counties and finds the top 10 counties 
     """
     sorted_state_list = sorted(counties_list, key=lambda county: -county["total_dead"])
-    top_10 = sorted_state_list[:10]
+    top_10 = sorted_state_list[:5]
     return top_10
 
 def find_county_data(states_list, counties_list):

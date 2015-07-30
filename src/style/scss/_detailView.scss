@@ -98,9 +98,10 @@ Detail Share
     }
 }
 
-.iapp-embed .iapp-detail-share-button {
+.iapp-embed .iapp-detail-share-button, .iapp-embed .iapp-share-icon {
     display: none;
 }
+
 
 .iapp-share-icon-wrap {
     // bottom: 50px;
@@ -113,9 +114,6 @@ Detail Share
     &.iapp-show {
         opacity: 1;
         transform: translate(0, 0);
-    }
-    @media (max-width: 600px) {
-        width: 40px;
     }
 }
 
@@ -130,6 +128,7 @@ Detail Share
         transition: all 250ms ease 100ms;
     }
 }
+
 
 .iapp-show {
     .iapp-share-icon {

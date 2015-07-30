@@ -84,7 +84,7 @@ __p += '\n    <div class="video-wrap video-wrap-mobile"> \n';
  } else { ;
 __p += '\n    <div class="video-wrap"> \n';
  } ;
-__p += '\n    <div class="video-intro-overlay">\n        <div class="video-intro-overlay-content">\n            <h2 class="iapp-header">High Speed Chases</h2>\n                <p class="video-intro-overlay-chatter">Amet atque impedit distinctio soluta consectetur? Adipisci consectetur neque fuga modi distinctio provident! A soluta sed aspernatur eos sit possimus eveniet, corrupti mollitia? Sed odit id quaerat consectetur sint! Nemo.</p>\n            ';
+__p += '\n    <div class="video-intro-overlay">\n        <div class="video-intro-overlay-content">\n            <h2 class="iapp-header">Police chases kill thousands</h2>\n                <p class="video-intro-overlay-chatter">Nearly every day, someone is killed during a high-speed chase between police and a suspect. Almost half of the 11,500 people killed since 1979 have been bystanders or passengers in fleeing cars. The following interactive graphic lets you analyze the number of deaths in every state and in major counties. It also explains what kinds of people were killed and why deadly chases began.</p>\n            ';
  if (!isMobile) {;
 __p += '\n                <div class="iapp-tablet-play-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"></div>\n                <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Search Data</div></div>\n            ';
  } ;

@@ -4,7 +4,7 @@ define([
     //set project data URL here
     var dataURL = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/data/data.json";
     //set project image path here
-    var imagePath = "";
+    var imagePath = "http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/img/";
 
     //set project default share language here
     var defaultShareLanguage = "Check police chase deaths state by state";

@@ -28,9 +28,13 @@
 
 .iapp-fade {
     opacity: 0;
+    position: absolute;
     transform: translate(0, 50px);
     @media (max-width: 600px) {
-        display: none;
+        position: absolute;
+    }
+
+    @media (max-height: 600px) {
     }
 }
 
@@ -142,12 +146,27 @@ Branding
     img {
         width: 30px;
     }
+
+    @media(max-width: 600px) {
+        position: static;
+    }
+
+    @media(max-height: 600px) {
+        position: static;
+    }
+}
+
+.iapp-embed .iapp-play-button {
+    display: none;
 }
 
 .iapp-play-button {
     @extend .iapp-info-button;
     left: 10px;
     max-width: 150px;
+    @media(max-height: 600px) {
+        margin-left: 2em;
+    }
 }
 
 .iapp-video-skip-button {

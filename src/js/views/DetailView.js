@@ -55,9 +55,9 @@ define([
             this.$('.iapp-detail-chart').empty();
             var width = this.$(".iapp-detail-inner-wrap").width();
 
-            if (config.isMobile) {
-                width = window.innerWidth - 46;
-            }
+            // if (config.isMobile) {
+                // width = window.innerWidth - 46;
+            // }
 
             var colors = ["#2e76ff", "#d00028", "#a6db5e"];
             var barHeight = 30;

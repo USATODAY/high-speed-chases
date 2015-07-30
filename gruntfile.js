@@ -356,7 +356,7 @@ module.exports = function(grunt) {
     clean: {
       dev: ['<%=config.build%>'],
       tmp: ['<%=config.tmp%>'],
-      deploy:  ['js', 'style', 'data']
+      deploy:  ['js', 'style', 'data', 'html']
     }
 
   });
@@ -379,5 +379,5 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['clean:dev', 'jst', 'jshint', 'requirejs:dev', 'sass:dev', 'autoprefixer:dev', 'copy:main', 'clean:tmp', 'browserSync:dev', 'watch']);
   grunt.registerTask('test', ['clean:dev', 'jst', 'jshint', 'requirejs:dev', 'sass:dev', 'autoprefixer:dev', 'copy:main', 'copy:test', 'clean:tmp', 'browserSync:test', 'watch']);
   grunt.registerTask('build', ['clean:dev', 'jst', 'jshint', 'requirejs:deploy', 'requirejs:embed', 'sass:build', 'autoprefixer:build', 'copy:main', 'clean:tmp']);
-  grunt.registerTask('deploy', ['build', 'copy:deploy', 'ftp:upload1', 'ftp:upload2', 'ftp:upload3', 'clean:deploy']);
+  grunt.registerTask('deploy', ['build', 'copy:deploy', 'ftp:upload1', 'ftp:upload2', 'ftp:upload3', 'ftp:upload4', 'ftp:upload5', 'clean:deploy']);
 };
