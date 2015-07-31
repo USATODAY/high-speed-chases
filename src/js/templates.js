@@ -23,9 +23,9 @@ __p += '<div class="iapp-detail-inner-wrap">\n    <h2 class="iapp-detail-head">'
 ((__t = ( total_pretty )) == null ? '' : __t) +
 '</span>\n        </div>\n    <h3 class="iapp-detail-sub-head">Breakdown of deaths</h3>\n    <div class="iapp-detail-chart"></div>\n    <div class="iapp-detail-key">\n        <div class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color police"></span>\n            <span class="iapp-detail-key-text">Police: </span>\n            <br/>\n            <span class="iapp-detail-key-item-number">' +
 ((__t = (police)) == null ? '' : __t) +
-'</span>\n        </div>\n        <div class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color driver"></span>\n            <span class="iapp-detail-key-text">Fleeing Driver:</span>\n            <br/>\n            <span class="iapp-detail-key-item-number">' +
+'</span>\n        </div>\n        <div class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color driver"></span>\n            <span class="iapp-detail-key-text">Fleeing Drivers:</span>\n            <br/>\n            <span class="iapp-detail-key-item-number">' +
 ((__t = (fleeing_driver)) == null ? '' : __t) +
-'</span>\n        </div>\n        <div class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color non-violator"></span>\n            <span class="iapp-detail-key-text">Non-violator: </span>\n            <br/>\n            <span class="iapp-detail-key-item-number">';
+'</span>\n        </div>\n        <div class="iapp-detail-key-item">\n            <span class="iapp-detail-key-color non-violator"></span>\n            <span class="iapp-detail-key-text">Non-violators: </span>\n            <br/>\n            <span class="iapp-detail-key-item-number">';
 print(bystanders + fleeing_other);
 __p += '</span>\n        </div>\n    </div>\n    <h3 class="iapp-detail-sub-head">Top Counties</h3>\n    <table class="table table-condensed">\n        <thead>\n            <tr>\n                <th>County</th>\n                <th>Total Dead</th>\n                <th>Police</th>\n                <th>Fleeing Drivers</th>\n                <th>Non-violators</th>\n            </tr>\n        </thead>\n        <tbody>\n        ';
  _.each(top_10, function(county) { ;
