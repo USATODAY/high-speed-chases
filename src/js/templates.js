@@ -6,7 +6,7 @@ this["templates"]["AppView.html"] = function(obj) {
 obj || (obj = {});
 var __t, __p = '', __e = _.escape;
 with (obj) {
-__p += '<div class="iapp-search-wrap iapp-fade">\n    <div class="iapp-search ">\n        <div class="iapp-header">Police chases kill thousands</div>\n                <p class="iapp-chatter">Nearly every day, someone is killed during a high-speed chase between police and a suspect. Almost half of the 11,500 people killed since 1979 have been bystanders or passengers in fleeing cars. The following interactive graphic lets you analyze the number of deaths in every state and in major counties. It also explains what kinds of people were killed and why deadly chases began.</p>\n        <div class="iapp-search-input-group">\n            <img class="iapp-search-icon" src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/search-icon.svg" alt="Info">\n            <input class="iapp-search-input" type="text" placeholder="Search states">\n        </div>\n        <div class="iapp-search-results-wrap" style="display: none">\n            <div class="iapp-search-results-inner-wrap"></div>\n        </div>\n        <div class="iapp-detail-container"></div>\n    </div>\n    <div class="iapp-info-button" style="display: none">\n        <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/question-icon.svg" alt="Info">\n    </div>\n    <div class="iapp-play-button">\n        <img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"> <span>Play Video</span>\n    </div>\n</div>\n\n<div class="iapp-info-wrap">\n    <div class="iapp-info-close"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/close-icon-white.svg" alt="close"></div>\n    <div class="iapp-info-inner-wrap">\n        <h3 class="iapp-info-header">Credits</h3>\n        <p class="iapp-info-p">Tom Frank, John Kelly, Shawn Sullivan, Mitchell Thorson, Zachary Walker, USA TODAY</p>\n    </div>\n    <div class="iapp-detail-background js-iapp-info-background"></div>\n</div>\n<div class="iapp-mobile-video-container"></div>\n';
+__p += '<div class="iapp-search-wrap iapp-fade">\n    <div class="iapp-search ">\n        <div class="iapp-header">Police chases kill thousands</div>\n                <p class="iapp-chatter">Nearly every day, someone is killed during a high-speed chase between police and a suspect. Almost half of the 11,500 people killed since 1979 have been bystanders or passengers in fleeing cars. The following interactive graphic lets you analyze the number of deaths in every state and in major counties. It also explains what kinds of people were killed and why deadly chases began.</p>\n        <div class="iapp-search-input-group">\n            <img class="iapp-search-icon" src="https://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/search-icon.svg" alt="Info">\n            <input class="iapp-search-input" type="text" placeholder="Search states">\n        </div>\n        <div class="iapp-search-results-wrap" style="display: none">\n            <div class="iapp-search-results-inner-wrap"></div>\n        </div>\n        <div class="iapp-detail-container"></div>\n    </div>\n    <div class="iapp-info-button" style="display: none">\n        <img src="https://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/question-icon.svg" alt="Info">\n    </div>\n    <div class="iapp-play-button">\n        <img src="https://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"> <span>Play Video</span>\n    </div>\n</div>\n\n<div class="iapp-info-wrap">\n    <div class="iapp-info-close"><img src="https://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/close-icon-white.svg" alt="close"></div>\n    <div class="iapp-info-inner-wrap">\n        <h3 class="iapp-info-header">Credits</h3>\n        <p class="iapp-info-p">Tom Frank, John Kelly, Shawn Sullivan, Mitchell Thorson, Zachary Walker, USA TODAY</p>\n    </div>\n    <div class="iapp-detail-background js-iapp-info-background"></div>\n</div>\n<div class="iapp-mobile-video-container"></div>\n';
 
 }
 return __p
@@ -45,7 +45,7 @@ __p += '\n        </tbody>\n    </table>\n</div>\n<div class="iapp-detail-share-
 ((__t = (twitterShare)) == null ? '' : __t) +
 '&text=' +
 ((__t = (encodedShare)) == null ? '' : __t) +
-'" class="iapp-share-button iapp-share-icon iapp-share-twitter iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/twitter.svg" alt="Twitter share"></a>\n        <a href=\'https://www.facebook.com/dialog/feed?display=popup&app_id=' +
+'" class="iapp-share-button iapp-share-icon iapp-share-twitter iapp-share-popup" target="_blank"><img src="https://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/twitter.svg" alt="Twitter share"></a>\n        <a href=\'https://www.facebook.com/dialog/feed?display=popup&app_id=' +
 ((__t = (fb_id)) == null ? '' : __t) +
 '&link=' +
 ((__t = (fbShare)) == null ? '' : __t) +
@@ -55,7 +55,7 @@ __p += '\n        </tbody>\n    </table>\n</div>\n<div class="iapp-detail-share-
 ((__t = (encodedShare)) == null ? '' : __t) +
 '&redirect_uri=' +
 ((__t = (fb_redirect)) == null ? '' : __t) +
-'\' class="iapp-share-button iapp-share-icon iapp-share-facebook iapp-share-popup" target="_blank"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/facebook.svg" alt="Facebook share"></a>\n    </div>\n</div>\n';
+'\' class="iapp-share-button iapp-share-icon iapp-share-facebook iapp-share-popup" target="_blank"><img src="https://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/facebook.svg" alt="Facebook share"></a>\n    </div>\n</div>\n';
 
 }
 return __p
@@ -86,7 +86,7 @@ __p += '\n    <div class="video-wrap"> \n';
  } ;
 __p += '\n    <div class="video-intro-overlay">\n        <div class="video-intro-overlay-content">\n            <h2 class="iapp-header">Police chases kill thousands</h2>\n                <p class="video-intro-overlay-chatter">Nearly every day, someone is killed during a high-speed chase between police and a suspect. Almost half of the 11,500 people killed since 1979 have been bystanders or passengers in fleeing cars. The following interactive graphic lets you analyze the number of deaths in every state and in major counties. It also explains what kinds of people were killed and why deadly chases began.</p>\n            ';
  if (!isMobile) {;
-__p += '\n                <div class="iapp-tablet-play-button"><img src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"></div>\n                <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Search Data</div></div>\n            ';
+__p += '\n                <div class="iapp-tablet-play-button"><img src="https://www.gannett-cdn.com/experiments/usatoday/2015/07/rape-kits/img/play-icon-white.svg" alt="Play video"></div>\n                <div class="iapp-button iapp-video-skip-button"><div class="iapp-button-text">Search Data</div></div>\n            ';
  } ;
 __p += '\n        </div>\n        </div>\n        ';
  if (!isMobile) { ;
@@ -94,13 +94,13 @@ __p += '\n        <!-- Video Controls -->\n        <div class="video-close-butto
  } ;
 __p += '\n        ';
  if (!isMobile) { ;
-__p += '\n        <video id="introvid" class="bgvideo" poster="http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/img/video_still.jpg">\n        ';
+__p += '\n        <video id="introvid" class="bgvideo" poster="https://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/img/video_still.jpg">\n        ';
  } else { ;
-__p += '\n        <video id="introvid" class="bgvideo" controls poster="http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/img/video_still.jpg">\n        ';
+__p += '\n        <video id="introvid" class="bgvideo" controls poster="https://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/img/video_still.jpg">\n        ';
  } ;
-__p += '\n            <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/media/' +
+__p += '\n            <source src="https://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/media/' +
 ((__t = ( video_name)) == null ? '' : __t) +
-'.mp4" type="video/mp4" />\n            <source src="http://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/media/' +
+'.mp4" type="video/mp4" />\n            <source src="https://www.gannett-cdn.com/experiments/usatoday/2015/07/police-chases/media/' +
 ((__t = ( video_name)) == null ? '' : __t) +
 '.ogv" type="video/ogg" />\n        </video>\n        ';
  if (isMobile || isTablet) { ;
